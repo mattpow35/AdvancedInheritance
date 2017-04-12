@@ -21,6 +21,8 @@ public class InheritanceController
 	private void setupList()
 	{
 		myPizzas.add(new DrPepper());
+		myPizzas.add(new PepperoniPizza());
+		myPizzas.add(new CowboyPizza());
 	}
 	
 	public String doStuffWithList()
@@ -41,20 +43,24 @@ public class InheritanceController
 			}
 			results += "\n";
 			
-			for (int i = 0; i < myPizzas.size(); i ++)
+			if(currentPizza.getPepperoni() == 0)
 			{
-				currentPizza.setPepporoni(i);
+				currentPizza.setPepperoni(2);
 			}
-			results += "This pizza item also has " + currentPizza.getPepporoni() + " pieces of Pepporoni.";
+			
+		
+			results += "This pizza item has " + currentPizza.getPepperoni() + " pieces of Pepporoni.";
 			results += "\n";
 			
 			if (currentPizza instanceof DrPepper)
 			{
 				results += "This pizza item is actually also a DrPepper!";
+				results += "\n";
 			}
+			results += "" + "\n";
+			results += "" + "\n";
 		}
-		results += "\n";
-		results += "\n";
+	
 		
 		return results;
 	}

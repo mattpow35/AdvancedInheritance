@@ -5,12 +5,12 @@ import inheritance.view.InheritanceFrame;
 
 public class DrPepper implements pizzable
 {
-	int pepporoniCount;
+	int pepperoniCount;
 	private InheritanceFrame baseFrame;
 	
 	public DrPepper()
 	{
-		pepporoniCount = 0;
+		pepperoniCount = 0;
 	}
 	
 	public boolean hasPineapple()
@@ -23,14 +23,14 @@ public class DrPepper implements pizzable
 		JOptionPane.showMessageDialog(baseFrame, "The DrPepper was tossed like a pizza!!!!!!");
 	}
 	
-	public void setPepporoni(int pepporoniCount)
+	public void setPepperoni(int pepperoniCount)
 	{
-		this.pepporoniCount = pepporoniCount;
+		this.pepperoniCount = pepperoniCount;
 	}
 	
-	public int getPepporoni()
+	public int getPepperoni()
 	{
-		return pepporoniCount;
+		return pepperoniCount;
 	}
 
 }

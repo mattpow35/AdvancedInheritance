@@ -13,6 +13,7 @@ public class InheritancePanel extends JPanel
 	private SpringLayout baseLayout;
 	private JButton inheritanceButton;
 	private JTextArea inheritanceDisplay;
+	private JScrollPane inheritancePane;
 	
 	public InheritancePanel(InheritanceController baseController)
 	{
@@ -21,14 +22,20 @@ public class InheritancePanel extends JPanel
 		baseLayout = new SpringLayout();
 		inheritanceButton = new JButton("Click to get the info about the Pizza items.");
 		inheritanceDisplay = new JTextArea(20, 35);
-		baseLayout.putConstraint(SpringLayout.NORTH, inheritanceButton, 26, SpringLayout.SOUTH, inheritanceDisplay);
-		baseLayout.putConstraint(SpringLayout.WEST, inheritanceButton, 0, SpringLayout.WEST, inheritanceDisplay);
-		baseLayout.putConstraint(SpringLayout.NORTH, inheritanceDisplay, 10, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, inheritanceDisplay, 31, SpringLayout.WEST, this);
 		
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupScrollPane()
+	{
+		inheritancePane = new JScrollPane();
+		
+		inheritancePane.setViewportView(inheritanceDisplay);
+		inheritancePane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		inheritancePane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	}
 	
 	private void setupPanel()
@@ -45,7 +52,10 @@ public class InheritancePanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, inheritanceButton, 26, SpringLayout.SOUTH, inheritanceDisplay);
+		baseLayout.putConstraint(SpringLayout.WEST, inheritanceButton, 0, SpringLayout.WEST, inheritanceDisplay);
+		baseLayout.putConstraint(SpringLayout.NORTH, inheritanceDisplay, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, inheritanceDisplay, 31, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()

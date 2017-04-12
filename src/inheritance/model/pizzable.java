@@ -13,6 +13,6 @@ public interface pizzable
 {
 	public boolean hasPineapple();
 	public void toss();
-	public void setPepporoni(int pepporoniCount);
-	public int getPepporoni();
+	public void setPepperoni(int pepporoniCount);
+	public int getPepperoni();
 }
